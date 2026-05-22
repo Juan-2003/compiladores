@@ -297,7 +297,10 @@ declaracion:
               if (tabla[i].activo &&
                   tabla[i].clase == TIPO_FUNC &&
                   strcmp(tabla[i].nombre, $2) == 0) {
-                  tabla[i].aridad = aridad;
+		  if(tabla[i].aridad == -1){
+                      tabla[i].aridad = aridad;                  
+		  }                  
+
                   break;
               }
           }
